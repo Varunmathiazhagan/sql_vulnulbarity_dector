@@ -1,0 +1,131 @@
+url,type,param,technique,risk,payload,evidence,fix_snippet
+http://localhost:8000/view_upload.php,GET,id,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE id = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/admin.php,GET,delete_comment,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE delete_comment = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/products.php,GET,q,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE q = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/cart.php,POST,product_id,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE product_id = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/search.php,GET,q,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE q = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/admin.php,GET,delete_user,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE delete_user = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/index.php,GET,q,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE q = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/admin.php,POST,user_id,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE user_id = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/index.php,POST,user_id,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE user_id = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/admin.php,POST,comment_id,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE comment_id = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/login.php,POST,username,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE username = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/cart.php,POST,note,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE note = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/index.php,POST,comment,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE comment = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/login.php,POST,password,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE password = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/index.php,POST,add_comment,error-based,High,',SQLSTATE\[[A-Z0-9]+\],"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE add_comment = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/view_upload.php,GET,id,boolean-blind,Medium, AND 1=1 -- / AND 1=2 -- ,rounds=3 diffs=3 sim_avg=0.015,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE id = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/cart.php,POST,product_id,union-confirmed,Critical,UNION SELECT 'ZXUNIONZX' --,columns=1,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE product_id = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/products.php,GET,q,boolean-blind,Medium,' OR '1'='1' -- /' OR '1'='2' -- ,rounds=3 diffs=3 sim_avg=0.522,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE q = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/view_upload.php,GET,id,union-confirmed,Critical,"UNION SELECT NULL,'ZXUNIONZX',NULL --",columns=3,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE id = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/index.php,GET,q,union-confirmed,Critical,"UNION SELECT NULL,'ZXUNIONZX',NULL --",columns=3,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE q = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/search.php,GET,q,union-confirmed,Critical,"UNION SELECT NULL,'ZXUNIONZX',NULL --",columns=3,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE q = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/products.php,GET,q,union-confirmed,Critical,"UNION SELECT NULL,NULL,'ZXUNIONZX',NULL,NULL --",columns=5,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE q = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/cart.php,POST,note,union-confirmed,Critical,UNION SELECT 'ZXUNIONZX' --,columns=1,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE note = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/login.php,POST,username,union-confirmed,Critical,"UNION SELECT NULL,'ZXUNIONZX',NULL --",columns=3,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE username = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/index.php,POST,comment,union-confirmed,Critical,UNION SELECT 'ZXUNIONZX' --,columns=1,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE comment = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"
+http://localhost:8000/login.php,POST,password,union-confirmed,Critical,"UNION SELECT NULL,'ZXUNIONZX',NULL --",columns=3,"// PHP PDO example
+$stmt = $pdo->prepare('SELECT * FROM table WHERE password = ?');
+$stmt->execute([$value]);
+$row = $stmt->fetch();
+"

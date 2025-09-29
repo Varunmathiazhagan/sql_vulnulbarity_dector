@@ -1,0 +1,5 @@
+aiohttp>=3.9
+beautifulsoup4>=4.12
+Flask>=3.0
+reportlab>=4.2
+playwright>=1.45
